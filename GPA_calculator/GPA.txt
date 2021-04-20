@@ -1,0 +1,35 @@
+VG101
+Intro to Computer and programming
+4
+A
+E
+VY100
+Academic writing I
+4
+B+
+J
+VC210
+Chemistry
+4
+A-
+E
+VV186
+Honor Mathematics II
+4
+A+
+E
+TH028
+Outline of Chinese Modern History
+3
+A
+M
+PE001
+PE
+1
+A
+M
+TH020
+Circumstance and policy
+0.5
+B+
+M
