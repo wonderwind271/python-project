@@ -54,7 +54,8 @@ def addin(All): #add course
     templist=[a1,a2,a3,a4,a5]
     return templist
 
-AllCourse=[];
+AllCourse=[]
+
 #test
 '''
 aa=course("Vg101","Introduction to Computer and Programming",4,"A",'E')
@@ -69,7 +70,7 @@ fr=open('GPA.txt',mode='r')
 
 while 1:
     
-    #read 5 lines, save into Allcourse list
+    # read 5 lines, save into Allcourse list
     jumpout=0
     temp=[]
     for i in range(5):
@@ -89,7 +90,8 @@ while 1:
             
 fr.close()
 while True: #get course information from stdin
-    print("Add course and save:1.  Add course(test, not save): 0. quit: other input")
+    print("Add course and save:1\nAdd course(test, not save):0\nDelete course from files:del\nother input:quit")
+    print("please input your choice\n> ",end='')
     cin=input()
     if cin=='1':
         fp=open('GPA.txt','a')
@@ -99,8 +101,24 @@ while True: #get course information from stdin
             fp.write('\n')
         #fp.write('NEXT\n')
         fp.close()
-        
-        
+    elif cin=='del':
+        print("These are the courses, please choose which one to delete")
+        for i in AllCourse:
+            i.show()
+        print('Please input the line of course to delete. Input integers:',end='')
+        DelLine=int(input())
+        del AllCourse[DelLine-1]  # delete from list
+        # delete the course from the file
+        fp=open('GPA.txt','w')  # rewrite back and omit the deleted line
+        for i in AllCourse:
+            ii = [i.CourseCode, i.CourseName, str(i.credit), i.grade, i.Ctype]
+            for j in ii:
+                fp.write(j+'\n')
+
+        print("course deleted")
+        fp.close()
+        for i in AllCourse:
+            i.show()
         
     elif cin=='0':
         addin(AllCourse)
@@ -108,7 +126,7 @@ while True: #get course information from stdin
         break
         
 
-credit=0;GP=0;Gcredit=0;
+credit=0;GP=0;Gcredit=0
 GPA=0
 for i in AllCourse:
     if i.grade=='P':

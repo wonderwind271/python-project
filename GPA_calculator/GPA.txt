@@ -1,31 +1,31 @@
 VG101
 Intro to Computer and programming
-4
+4.0
 A
 E
 VY100
 Academic writing I
-4
+4.0
 B+
 J
 VC210
 Chemistry
-4
+4.0
 A-
 E
 VV186
 Honor Mathematics II
-4
+4.0
 A+
 E
 TH028
 Outline of Chinese Modern History
-3
+3.0
 A
 M
 PE001
 PE
-1
+1.0
 A
 M
 TH020
