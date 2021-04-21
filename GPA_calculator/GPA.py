@@ -4,7 +4,7 @@ class course:
         self.CourseName=CourseName
         self.credit=credit
         self.grade=grade
-        self.Ctype=Ctype# E:engineering course  J: JI(non engineering) course  M: MoE/SJTU required course(non JI)
+        self.Ctype=Ctype  # E:engineering course  J: JI(non engineering) course  M: MoE/SJTU required course(non JI)
         if grade=='A+' or grade=='A':
             self.GPA=4.0
         elif grade=='A-':
