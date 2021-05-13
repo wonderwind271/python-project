@@ -30,7 +30,7 @@ class course:
             self.grade='P'
             print("Regarded as Pass, no influence to GPA!")
         self.retakeable=False
-        if self.GPA<2:
+        if self.GPA=='P' or self.GPA<2:
             self.retakeable=True
         
     def show(self):
@@ -55,7 +55,7 @@ def addin(All): #add course
     return templist
 
 AllCourse=[]
-
+print("Welcome to GPA calculator!\n")
 #test
 '''
 aa=course("Vg101","Introduction to Computer and Programming",4,"A",'E')
@@ -90,7 +90,8 @@ while 1:
             
 fr.close()
 while True: #get course information from stdin
-    print("Add course and save:1\nAdd course(test, not save):0\nDelete course from files:del\nother input:quit")
+    print("----------")
+    print("Add course and save:1\nAdd course(test, not save):0\nDelete course from files:del\nShow the courses:show\nother input:quit")
     print("please input your choice\n> ",end='')
     cin=input()
     if cin=='1':
@@ -122,6 +123,9 @@ while True: #get course information from stdin
         
     elif cin=='0':
         addin(AllCourse)
+    elif cin=='show':
+        for i in AllCourse:
+            i.show()
     else:
         break
         
@@ -149,11 +153,24 @@ else:
 EGP=0
 EGcridit=0
 for i in AllCourse:
-    if i.Ctype=='E':
+    if i.Ctype=='E' and i.grade != 'P':
         EGcridit+=i.credit
         EGP+=i.GPA*i.credit
-if EGP==0:
+if EGcridit==0:
     print("No engineer course")
 else:
     EGPA=EGP/EGcridit
     print("Engineering GPA=",EGPA)
+#cal non-MARX and PE class
+NPGP=0
+NPcridit=0
+for i in AllCourse:
+    if i.Ctype!='M' and i.grade != 'P':
+        NPcridit+=i.credit
+        NPGP+=i.GPA*i.credit
+if NPcridit==0:
+    print("No JI course")
+else:
+    NPGPA=NPGP/NPcridit
+    print("JI course GPA=",NPGPA)
+
